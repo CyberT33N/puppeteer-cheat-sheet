@@ -36,7 +36,7 @@ if (await playButton.isIntersectingViewport()) console.log( 'Large play button w
 
 // wait until element gets visible.. timeout 0 means wait forever until visible
 await page.waitForSelector('#user-panel', {visible: true, timeout:0});
-console.log( 'It seems that the video was uploaded..' );                             
+console.log( 'User Panel visble..' );                             
 ```  
 
 
