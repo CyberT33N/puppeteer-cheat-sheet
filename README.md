@@ -133,7 +133,7 @@ await page.evaluate((item) => {
 
 
 
-# Click
+# Proxy/Socks
 ```javascript
 /*
 Use --proxy-server at the launch option as example:
