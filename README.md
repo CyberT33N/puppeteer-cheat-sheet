@@ -144,7 +144,7 @@ and then later authenticate with the code from below..
 for some reasons socks5 not working with this method.. In order to use proxy and socks in more viable way use:
 - https://github.com/Cuadrix/puppeteer-page-proxy
 */
-await page.authenticate({'username': vpn_username, 'password': vpn_password});
+await page.authenticate({'username': username, 'password': password});
 ```
 
 
