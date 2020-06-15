@@ -122,7 +122,7 @@ await page.type('input[data-ng-model="file.title"]', 'namehere', { delay: 100 })
 # Click
 ```javascript
 // method #1
-await page.click('#dropDown > li[data-production-type=example]');
+await page.click('#dropDown > li[data-production-type="example"]');
 
 // method #2
 let item = '.ytp-play-button.ytp-button';
