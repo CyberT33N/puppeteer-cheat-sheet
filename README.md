@@ -177,7 +177,7 @@ client = await puppeteer.launch({
   //executablePath: '/usr/bin/google-chrome',
   //executablePath: '/home/user/Downloads/Linux_x64_749751_chrome-linux/chrome-linux/chrome',
   //executablePath: '/home/user/Downloads/firefox-78.0a1.en-US.linux-x86_64/firefox/firefox',
-  headless: headlessVALUE, // true or false
+  headless: false,
   userDataDir: '../../../../../lib/browserProfiles/' + config_browser_profile,
   args: [
   
