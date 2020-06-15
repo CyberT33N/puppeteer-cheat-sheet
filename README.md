@@ -110,9 +110,8 @@ console.log( 'errorMessage:' + errorMessage + '\n\n' );
 
 # Enter Text
 ```javascript
-// method #1
-let myLocalValue = 'Adenosine triphosphate';    
-await page.$eval('input[name=search]', (el, value) => el.value = value, myLocalValue);
+// method #1  
+await page.$eval('input[name=search]', (el, value) => el.value = value, 'text here..');
 
 // method #2 (human like typing)
 await page.type('input[data-ng-model="file.title"]', 'namehere', { delay: 100 });
