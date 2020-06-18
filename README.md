@@ -69,6 +69,11 @@ console.log( 'error: ' + e.message );
  setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
  } // if ( e.match( 'net::ERR_EMPTY_RESPONSE' ) ){
 
+ if ( e.message.match( 'net::ERR_NETWORK_CHANGED' ) ){
+ console.log( '#2 - net::ERR_NETWORK_CHANGED was found we reload page in 30 seconds..' );
+ setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
+ } //    if ( e.message.match( 'net::ERR_NETWORK_CHANGED' ) ){
+
  if ( e.message.match( 'net::ERR_NAME_NOT_RESOLVED' ) ){
  console.log( '#2 - net::ERR_NAME_NOT_RESOLVED was found we reload page in 30 seconds..' );
  setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
