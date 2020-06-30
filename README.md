@@ -3,10 +3,28 @@ Puppeteer Cheat Sheet with the most needed stuff..
 
 
 
-# Get current url
+## URL
+
+#### Get current url
 ```javascript
 console.log( page.url() );      
 ```  
+
+#### Get url of redirect
+```javascript
+let pageTMP = await client.newPage();
+await pageTMP.goto(itemURL, {waitUntil: 'networkidle0', timeout: 0});
+log( 'pageTMP.url(): ' + pageTMP.url() );
+pageTMP.close();
+```  
+
+<br />
+<br />
+_________________________________________________
+_________________________________________________
+
+<br />
+<br />
 
 # Pause
 ```javascript
