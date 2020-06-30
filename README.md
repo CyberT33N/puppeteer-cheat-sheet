@@ -12,10 +12,21 @@ console.log( page.url() );
 
 #### Get url of redirect
 ```javascript
-let pageTMP = await client.newPage();
-await pageTMP.goto(itemURL, {waitUntil: 'networkidle0', timeout: 35000});
-log( 'url: ' + pageTMP.url() );
-pageTMP.close();
+
+function redirectChecker(itemURL){(async () => {
+
+                    let pageTMP = await client.newPage();
+                    await pageTMP.goto(itemURL, {waitUntil: 'networkidle0', timeout: 35000});
+
+                    let currenturl = pageTMP.url()
+                    log( 'currenturl: ' + currenturl );
+
+                    pageTMP.close();
+
+                    return currenturl;
+
+     })().catch((e) => {  console.error('#2a33 - Error while try to get redirect url - error :' + e);  }); //  })().catch((e) => {
+} // function redirectChecker(){
 ```  
 
 <br />
