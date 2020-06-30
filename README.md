@@ -18,6 +18,7 @@ import array with redirect urls and get back as return an array which the final 
 
 *WARNING* This will be executed parallel so only import small range of links because for each link we open a new tab for redirect check. If you open too many tabs parallel you may crash your Browser. Alternative build in any wait method to prevent overload of tabs.
 
+This example shows aswell how you can create functions which execute any new stuff parallel with puppeteer inside of a new tabs, while your main script is running too..
 
 */
 async function getRedirectURL(importedArray){
