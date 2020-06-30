@@ -25,7 +25,7 @@ async function redirectChecker(itemURL){
 
                     return currenturl;
 
-} // function redirectChecker(){
+}
 ```  
 
 <br />
