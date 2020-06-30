@@ -24,28 +24,28 @@ log( 'ENTER getRedirectURL() - Imported Array: ' + importedArray );
 
 
 
-await Promise.all(
-      importedArray.map(async d => {
-      log( 'Current array item we process: ' + d );
+        await Promise.all(
+              importedArray.map(async d => {
+              log( 'Current array item we process: ' + d );
 
-        let pageTMP = await client.newPage();
-        await pageTMP.goto(d, {waitUntil: 'networkidle0', timeout: 35000});
+                let pageTMP = await client.newPage();
+                await pageTMP.goto(d, {waitUntil: 'networkidle0', timeout: 35000});
 
-        let currenturl = pageTMP.url()
-        log( 'Final url after redirect: ' + currenturl );
+                let currenturl = pageTMP.url()
+                log( 'Final url after redirect: ' + currenturl );
 
-        pageTMP.close();
-        arrayRedirectsURLS.push(currenturl);
+                pageTMP.close();
+                arrayRedirectsURLS.push(currenturl);
 
-      }) // tmpAR.map(async process => {
-); // await Promise.all(
+              }) // tmpAR.map(async process => {
+        ); // await Promise.all(
 
 
 
-} //    if( importedArray[0] ){
-log( 'redirect loop done..' );
+  } //    if( importedArray[0] ){
+  log( 'redirect loop done..' );
 
-return arrayRedirectsURLS;
+  return arrayRedirectsURLS;
 
 
 } //  async function getRedirectURL(importedArray){
