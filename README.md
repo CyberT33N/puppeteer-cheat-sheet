@@ -192,7 +192,7 @@ client = await puppeteer.launch({
 '--load-extension=../../../../../lib/chromeextension/script_safe/oiigbmnaadbkfbmpbfijlflahbdbdgdf/1.0.9.3_0',
 
 
-  //'--window-size=' + windowWidth + ',' + windowHeight;
+  '--window-size=' + windowWidth + ',' + windowHeight;
   '--disable-gpu'
   '--disable-flash-3d',
   '--no-sandbox',
@@ -218,4 +218,10 @@ client = await puppeteer.launch({
 
 
 });
+
+page = await client.newPage();
+await page.waitFor(5000);
+await page.bringToFront();
+await page.setViewport({width:windowWidth, height:windowHeight});
+
 ```
