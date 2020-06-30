@@ -13,7 +13,7 @@ console.log( page.url() );
 #### Get url of redirect
 ```javascript
 
-function redirectChecker(itemURL){(async () => {
+async function redirectChecker(itemURL){
 
                     let pageTMP = await client.newPage();
                     await pageTMP.goto(itemURL, {waitUntil: 'networkidle0', timeout: 35000});
@@ -25,7 +25,6 @@ function redirectChecker(itemURL){(async () => {
 
                     return currenturl;
 
-     })().catch((e) => {  console.error('#2a33 - Error while try to get redirect url - error :' + e);  }); //  })().catch((e) => {
 } // function redirectChecker(){
 ```  
 
