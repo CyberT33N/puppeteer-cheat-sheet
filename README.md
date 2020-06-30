@@ -12,7 +12,13 @@ console.log( page.url() );
 
 #### Get url of redirect
 ```javascript
-/*import array with redirect urls and get back as return an array which the final redirected urls*/
+/*
+
+import array with redirect urls and get back as return an array which the final redirected urls
+
+*WARNING* This will be executed parallel so only import small range of links because for each link we open a new tab for redirect check. If you open too many tabs parallel you may crash your Browser.
+
+*/
 async function getRedirectURL(importedArray){
 log( 'ENTER getRedirectURL() - Imported Array: ' + importedArray );
 
