@@ -12,20 +12,47 @@ console.log( page.url() );
 
 #### Get url of redirect
 ```javascript
+/**/
 
-async function redirectChecker(itemURL){
 
-                    let pageTMP = await client.newPage();
-                    await pageTMP.goto(itemURL, {waitUntil: 'networkidle0', timeout: 35000});
+async function getRedirectURL(importedArray){
+log( 'ENTER getRedirectURL() - Imported Array: ' + importedArray );
 
-                    let currenturl = pageTMP.url()
-                    log( 'currenturl: ' + currenturl );
 
-                    pageTMP.close();
+  let arrayRedirectsURLS = [];
+  if( importedArray[0] ){
 
-                    return currenturl;
 
-}
+
+await Promise.all(
+      importedArray.map(async d => {
+      log( 'Current array item we process: ' + d );
+
+        let pageTMP = await client.newPage();
+        await pageTMP.goto(d, {waitUntil: 'networkidle0', timeout: 35000});
+
+        let currenturl = pageTMP.url()
+        log( 'Final url after redirect: ' + currenturl );
+
+        pageTMP.close();
+        arrayRedirectsURLS.push(currenturl);
+
+      }) // tmpAR.map(async process => {
+); // await Promise.all(
+
+
+
+} //    if( importedArray[0] ){
+log( 'redirect loop done..' );
+
+return arrayRedirectsURLS;
+
+
+} //  async function getRedirectURL(importedArray){
+
+
+
+
 ```  
 
 
