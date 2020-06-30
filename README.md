@@ -13,8 +13,8 @@ console.log( page.url() );
 #### Get url of redirect
 ```javascript
 let pageTMP = await client.newPage();
-await pageTMP.goto(itemURL, {waitUntil: 'networkidle0', timeout: 0});
-log( 'pageTMP.url(): ' + pageTMP.url() );
+await pageTMP.goto(itemURL, {waitUntil: 'networkidle0', timeout: 35000});
+log( 'url: ' + pageTMP.url() );
 pageTMP.close();
 ```  
 
