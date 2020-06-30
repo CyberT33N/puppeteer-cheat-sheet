@@ -12,9 +12,7 @@ console.log( page.url() );
 
 #### Get url of redirect
 ```javascript
-/**/
-
-
+/*import array with redirect urls and get back as return an array which the final redirected urls*/
 async function getRedirectURL(importedArray){
 log( 'ENTER getRedirectURL() - Imported Array: ' + importedArray );
 
