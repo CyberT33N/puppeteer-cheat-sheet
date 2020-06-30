@@ -16,7 +16,8 @@ console.log( page.url() );
 
 import array with redirect urls and get back as return an array which the final redirected urls
 
-*WARNING* This will be executed parallel so only import small range of links because for each link we open a new tab for redirect check. If you open too many tabs parallel you may crash your Browser.
+*WARNING* This will be executed parallel so only import small range of links because for each link we open a new tab for redirect check. If you open too many tabs parallel you may crash your Browser. Alternative build in any wait method to prevent overload of tabs.
+
 
 */
 async function getRedirectURL(importedArray){
