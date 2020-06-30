@@ -3,6 +3,11 @@ Puppeteer Cheat Sheet with the most needed stuff..
 
 
 
+# Get current url
+```javascript
+console.log( page.url() );      
+```  
+
 # Pause
 ```javascript
 await page.waitFor(1000);         
