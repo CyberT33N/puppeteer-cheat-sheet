@@ -49,6 +49,7 @@ log( 'ENTER getRedirectURL() - Imported Array: ' + importedArray );
   } //    if( importedArray[0] ){
   log( 'redirect loop done..' );
 
+  await page.bringToFront();
   return arrayRedirectsURLS;
 
 
