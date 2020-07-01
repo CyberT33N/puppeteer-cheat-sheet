@@ -33,7 +33,7 @@ log( 'ENTER getRedirectURL() - Imported Array: ' + importedArray );
               log( 'Current array item we process: ' + d );
 
                 let pageTMP = await client.newPage();
-                await pageTMP.goto(d, {waitUntil: 'networkidle0', timeout: 35000});
+                await pageTMP.goto(d, {waitUntil: 'load', timeout: 35000});
 
                 let currenturl = pageTMP.url()
                 log( 'Final url after redirect: ' + currenturl );
