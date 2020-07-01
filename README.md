@@ -148,39 +148,44 @@ console.log( 'error: ' + e.message );
 
 
  if( e.message.match('Navigation timeout of') ){
- console.log( '#2 - timeout was found we reload page in 30 seconds..' );
- setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
+      console.log( '#2 - timeout was found we reload page in 30 seconds..' );
+      setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
  } // else from if( e.match('Navigation timeout of') ){
 
  if ( e.message.match( 'net::ERR_EMPTY_RESPONSE' ) ){
- console.log( '#2 - net::ERR_EMPTY_RESPONSE was found we reload page in 30 seconds..' );
- setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
+      console.log( '#2 - net::ERR_EMPTY_RESPONSE was found we reload page in 30 seconds..' );
+      setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
  } // if ( e.match( 'net::ERR_EMPTY_RESPONSE' ) ){
 
  if ( e.message.match( 'net::ERR_NETWORK_CHANGED' ) ){
- console.log( '#2 - net::ERR_NETWORK_CHANGED was found we reload page in 30 seconds..' );
- setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
+      console.log( '#2 - net::ERR_NETWORK_CHANGED was found we reload page in 30 seconds..' );
+      setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
  } //    if ( e.message.match( 'net::ERR_NETWORK_CHANGED' ) ){
 
  if ( e.message.match( 'net::ERR_NAME_NOT_RESOLVED' ) ){
- console.log( '#2 - net::ERR_NAME_NOT_RESOLVED was found we reload page in 30 seconds..' );
- setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
+      console.log( '#2 - net::ERR_NAME_NOT_RESOLVED was found we reload page in 30 seconds..' );
+      setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
  } // if ( e.match( 'net::ERR_EMPTY_RESPONSE' ) ){
 
  if ( e.message.match( 'net::ERR_CONNECTION_CLOSED' ) ){
- console.log( '#2 - net::ERR_CONNECTION_CLOSED was found we reload page in 30 seconds..' );
- setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
+      console.log( '#2 - net::ERR_CONNECTION_CLOSED was found we reload page in 30 seconds..' );
+      setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
  } // if ( e.match( 'net::ERR_EMPTY_RESPONSE' ) ){
 
   if ( e.message.match( 'net::ERR_PROXY_CONNECTION_FAILED' ) ){
-  console.log( '#2 - net::ERR_PROXY_CONNECTION_FAILED was found.. Maybe your proxy is offline? Maybe change your proxy.. However we reload page in 30 seconds..' );
-  setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
+       console.log( '#2 - net::ERR_PROXY_CONNECTION_FAILED was found.. Maybe your proxy is offline? Maybe change your proxy.. However we reload page in 30 seconds..' );
+       setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
   } // if ( e.match( 'net::ERR_EMPTY_RESPONSE' ) ){
 
  if ( e.message.match( 'net::ERR_CONNECTION_REFUSED' ) ){
- console.log( '#2 - net::ERR_CONNECTION_REFUSED was found we reload page in 30 seconds..' );
- setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
+      console.log( '#2 - net::ERR_CONNECTION_REFUSED was found we reload page in 30 seconds..' );
+      setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
  } // if ( e.match( 'net::ERR_EMPTY_RESPONSE' ) ){
+
+ if ( e.message.match( 'net::ERR_CONNECTION_TIMED_OUT' ) ){
+      console.log( '#2 - net::ERR_CONNECTION_TIMED_OUT was found we reload page in 30 seconds..' );
+      setTimeout(() => { process.nextTick(startYoutTube) }, 30000);
+ } //   if ( e.match( 'net::ERR_EMPTY_RESPONSE' ) ){
 
  return;
 
