@@ -5,9 +5,14 @@ Puppeteer Cheat Sheet with the most needed stuff..
 
 ## URL
 
-#### Get current url
+#### Wait until new link loaded after click on submit as example
 ```javascript
 console.log( page.url() );      
+```  
+
+#### Get current url
+```javascript
+await page.waitForNavigation();     
 ```  
 
 #### Get url of redirect
