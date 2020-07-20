@@ -7,12 +7,13 @@ Puppeteer Cheat Sheet with the most needed stuff..
 
 #### Wait until new link loaded after click on submit as example
 ```javascript
-console.log( page.url() );      
+await page.waitForNavigation();   
 ```  
 
 #### Get current url
 ```javascript
-await page.waitForNavigation();     
+// https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pagewaitfornavigationoptions
+console.log( page.url() );      
 ```  
 
 #### Get url of redirect
