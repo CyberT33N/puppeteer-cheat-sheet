@@ -289,6 +289,25 @@ await page.evaluate((item) => {
 }, item);                          
 ```
 
+#### Click on element with specific text
+
+```javascript
+// method #1
+let selector = 'button';
+    await page.$$eval(selector, anchors => {
+        anchors.map(anchor => {
+            if(anchor.textContent == '+ Add Dropoff Notes') {
+                anchor.click();
+                return
+            }
+        })
+    });
+    
+// method #2
+await page.evaluate(() => {
+  [...document.querySelectorAll('button')].find(element => element.textContent === '+ Add Dropoff Notes').click();
+});
+```
 
 <br />
 <br />
