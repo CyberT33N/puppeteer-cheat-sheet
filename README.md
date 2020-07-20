@@ -437,3 +437,21 @@ await page.bringToFront();
 await page.setViewport({width:windowWidth, height:windowHeight});
 
 ```
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+# Third Party Links
+
+#### Chromium Browser extension
+- Screen Video recorder: https://chrome.google.com/webstore/detail/nimbus-screenshot-screen/bpconcjcammlapcogcnnelfmaeghhagj?hl=es
+
