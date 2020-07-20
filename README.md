@@ -243,11 +243,17 @@ console.log( 'errorMessage:' + errorMessage + '\n\n' );
 
 # Enter Text
 ```javascript
-// method #1  
+// In most cases method #1 is not working cause the input val cant be found by the website at validation
+// Also in most cases its recommended to click first on the input, enter the text and if needed press enter. Some inputs require enter press.
+
+// method #1 (not recommended for most cases)
 await page.$eval('input[name=search]', (el, value) => el.value = value, 'text here..');
 
-// method #2 (human like typing)
-await page.type('input[data-ng-model="file.title"]', 'namehere', { delay: 100 });
+// method #2 (human like typing - most viable for all inputs)
+// you must set a delay or you may get type errors and wrong characters
+await page.click('input[data-ng-model="file.title"]');
+await page.type('input[data-ng-model="file.title"]', 'namehere', { delay: 10 });
+await page.keyboard.press('Enter');
 ```
 
 
