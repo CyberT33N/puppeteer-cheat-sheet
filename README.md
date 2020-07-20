@@ -204,6 +204,31 @@ console.log( 'error: ' + e.message );
 <br />
 <br />
 
+# Key presses
+
+## Enter
+```javascript
+// In most cases the field you want to use enter must be focus. You can do this by click as example
+await page.click('input[role="combobox"');
+
+//method #1
+page.keyboard.press('Enter');
+
+//method #2
+await page.type(String.fromCharCode(13));
+```  
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
 # Get Text
 ```javascript
 //method #1
