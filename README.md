@@ -302,7 +302,7 @@ log( 'quoteActive()' );
 let el = await page.elementContains('div', 'Loading quote');
 log( 'el: ' + el );
 
-// if true it will be JSHandle@node if false it will be JSHandle@undefined
+// if true it will be JSHandle@node if false it will be JSHandle:undefined
 if ( el == 'JSHandle@node' ) {
      log( 'Still loading quotes..' );
      await quoteActive();
