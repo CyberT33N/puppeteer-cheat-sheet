@@ -247,6 +247,77 @@ let errorMessage = $(css).find('.ytp-error-content-wrap-reason > span').text();
 console.log( 'errorMessage:' + errorMessage + '\n\n' );  
 ```  
 
+## Find element with specific text
+```javascript
+
+
+
+         // extract the Page class
+         const { Page } = require("puppeteer/lib/Page");
+
+         /**
+          * @name elementContains
+          * @param {String} selector specific selector globally search and match
+          * @param {String} text filter the elements with the specified text
+          * @returns {Promise} elementHandle
+          */
+         Page.prototype.elementContains = function elementContains(...args) {
+           return this.evaluateHandle((selector, text) => {
+             // get all selectors for this specific selector
+             const elements = [...document.querySelectorAll(selector)];
+             // find element by text
+             const results = elements.filter(element => element.innerText.includes(text));
+             // get the last element because that's how querySelectorAll serializes the result
+             return results[results.length-1];
+           }, ...args);
+         };
+
+
+
+         /**
+          * Replicate the .get function
+          * gets an element from the executionContext
+          * @param {String} selector
+          * @returns {Promise}
+          */
+         const { JSHandle } = require("puppeteer/lib/JSHandle");
+         JSHandle.prototype.get = function get(selector) {
+           // get the context and evaluate inside
+           return this._context.evaluateHandle(
+             (element, selector) => {
+               return element.querySelector(selector);
+             },
+             // pass the JSHandle which is itself
+             this,
+             selector
+           );
+         };
+
+
+
+         await quoteActive();
+async function quoteActive(){
+log( 'quoteActive()' );
+
+let el = await page.elementContains('div', 'Loading quote');
+log( 'el: ' + el );
+
+// if true it will be JSHandle@node if false it will be JSHandle@undefined
+if ( el == 'JSHandle@node' ) {
+     log( 'Still loading quotes..' );
+     await quoteActive();
+} else {
+    log( 'quotes are loaded..' );
+    return true;
+}
+
+} // function quoteActive(){
+log( 'quoteActive() done..' );
+``` 
+
+
+
+
 # Enter Text
 ```javascript
 // In most cases method #1 is not working cause the input val cant be found by the website at validation
