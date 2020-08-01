@@ -143,9 +143,7 @@ console.log( 'User Panel visble..' );
 #waitUntil
 networkidle0 comes handy for SPAs that load resources with fetch requests.
 networkidle2 comes handy for pages that do long-polling or any other side activity.
-
-
-load = wait until page is loaded (not fully some elements may still load on same pages not recommend to use if you wait for something or scrap text)
+load = will also wait until page is fully loaded but this can be also used for redirects inside.
 
 timeout = time until we wait before we stop waiting..
 
