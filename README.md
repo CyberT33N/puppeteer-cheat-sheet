@@ -141,7 +141,10 @@ console.log( 'User Panel visble..' );
 /* this works with any puppeteer command.. You can check if something is visible as example and if not you get error and can work wit ith
 
 #waitUntil
-networkidle0 = wait until document lead and loading bar is way
+networkidle0 comes handy for SPAs that load resources with fetch requests.
+networkidle2 comes handy for pages that do long-polling or any other side activity.
+
+
 load = wait until page is loaded (not fully some elements may still load on same pages not recommend to use if you wait for something or scrap text)
 
 timeout = time until we wait before we stop waiting..
