@@ -100,6 +100,16 @@ if ( !await page.$('#confirm-button') ) await page.click('#confirm-button');
 ```  
 
 
+# Delete cookies
+```javascript
+let client = await page.target().createCDPSession();
+await client.send('Network.clearBrowserCookies');
+await client.send('Network.clearBrowserCache');  
+```  
+
+
+
+
 <br />
 <br />
 
