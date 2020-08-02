@@ -108,6 +108,13 @@ await client.send('Network.clearBrowserCache');
 ```  
 
 
+# Copy text from clipboard
+```javascript
+//method #1
+const context = await browser.defaultBrowserContext()
+await context.overridePermissions('https://example.com', ['clipboard-read'])
+const copiedText = await page.evaluate(`(async () => await navigator.clipboard.readText())()`)
+```  
 
 
 <br />
