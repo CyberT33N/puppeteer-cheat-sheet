@@ -67,6 +67,28 @@ log( 'ENTER getRedirectURL() - Imported Array: ' + importedArray );
 ```  
 
 
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+## Cheerio
+
+```javascript
+// You can use body or :root
+let css = await page.evaluate(() => document.querySelector('body').outerHTML);
+var $ = cheerio.load(css);
+let errorMessage = $(css).find('.ytp-error-content-wrap-reason > span').text();
+log( 'errorMessage:' + errorMessage + '\n\n' );
+```  
+
 <br />
 <br />
 
