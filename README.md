@@ -388,6 +388,12 @@ await page.type('input[data-ng-model="file.title"]', 'namehere', { delay: 10 });
 <br />
 <br />
 
+
+# Hover
+```javascript
+await page.hover('.ytp-progress-bar-container');                       
+```
+
 # Click
 ```javascript
 // method #1
