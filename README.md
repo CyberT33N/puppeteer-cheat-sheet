@@ -280,7 +280,10 @@ await page.type(String.fromCharCode(13));
 //method #1
 let videoDuration = await page.evaluate(element => element.textContent, await page.$(".ytp-time-duration") );
 
-//method #2 (cheerio) - You can use aswell :root instead of body
+//method #2
+await page.evaluate(() => document.querySelector('#reason').textContent);
+
+//method #3 (cheerio) - You can use aswell :root instead of body
 let css = await page.evaluate(() => document.querySelector('body').outerHTML);
 let $ = cheerio.load(css);
 let errorMessage = $(css).find('.ytp-error-content-wrap-reason > span').text();
