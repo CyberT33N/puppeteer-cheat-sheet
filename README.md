@@ -403,6 +403,12 @@ await page.type('input[data-ng-model="file.title"]', 'namehere', { delay: 10 });
 await page.hover('.ytp-progress-bar-container');                       
 ```
 
+# Focus
+```javascript
+const searchInput = await page.$('input[name=q]');
+await searchInput.focus();
+```
+
 # Blur
 ```javascript
 await page.$eval('input[id="search"]', e => e.blur());
