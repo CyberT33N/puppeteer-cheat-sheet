@@ -138,6 +138,12 @@ await context.overridePermissions('https://example.com', ['clipboard-read'])
 const copiedText = await page.evaluate(`(async () => await navigator.clipboard.readText())()`)
 ```  
 
+# Fix for Javascript on website stops when window not in focus
+```javascript
+const session = await page.target().createCDPSession();
+await session.send('Page.enable');
+await session.send('Page.setWebLifecycleState', {state: 'active'});
+```  
 
 <br />
 <br />
