@@ -181,6 +181,14 @@ await session.send('Page.enable');
 await session.send('Page.setWebLifecycleState', {state: 'active'});
 ```  
 
+
+
+# Emulate timezone
+```javascript
+await page.emulateTimezone( 'Europe/berlin' );
+console.log( await page.evaluate(() => date.toString()) );
+```  
+
 <br />
 <br />
 
