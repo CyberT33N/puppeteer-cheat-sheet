@@ -67,6 +67,11 @@ log( 'ENTER getRedirectURL() - Imported Array: ' + importedArray );
 ```  
 
 
+# Change useragent
+```javascript
+await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3738.0 Safari/537.36');
+```  
+
 
 <br />
 <br />
