@@ -129,10 +129,24 @@ if ( !await page.$('#confirm-button') ) await page.click('#confirm-button');
 
 # Delete cookies
 ```javascript
+// does not work in headless
 let client = await page.target().createCDPSession();
 await client.send('Network.clearBrowserCookies');
 await client.send('Network.clearBrowserCache');  
 ```  
+
+# Incognito window
+```javascript
+const context = await browser.createIncognitoBrowserContext();
+const page = await context.newPage();
+
+// Execute your code
+await page.goto('...');
+// ...
+
+await context.close(); // clear history
+```  
+
 
 
 # Copy text from clipboard
