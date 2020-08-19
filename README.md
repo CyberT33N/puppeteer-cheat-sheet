@@ -3,20 +3,20 @@ Puppeteer Cheat Sheet with the most needed stuff..
 
 
 
-## URL
+# URL
 
-#### Wait until new link loaded after click on submit as example
+## Wait until new link loaded after click on submit as example
 ```javascript
 await page.waitForNavigation();   
 ```  
 
-#### Get current url
+## Get current url
 ```javascript
 // https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pagewaitfornavigationoptions
 console.log( page.url() );      
 ```  
 
-#### Get url of redirect
+## Get url of redirect
 ```javascript
 /*
 
@@ -67,6 +67,18 @@ log( 'ENTER getRedirectURL() - Imported Array: ' + importedArray );
 ```  
 
 
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
 # Change useragent
 ```javascript
 await page.setUserAgent('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3738.0 Safari/537.36');
@@ -116,6 +128,10 @@ await page.waitFor(1000);
 await client.close();        
 ```  
 
+# Close current Page
+```javascript
+await page.close();        
+```  
 
 
 # If State
