@@ -153,6 +153,7 @@ await client.send('Network.clearBrowserCache');
 
 # Incognito window
 ```javascript
+// When you close context at the end and you want to create a new session after you must create again a new context
 const context = await browser.createIncognitoBrowserContext();
 const page = await context.newPage();
 
