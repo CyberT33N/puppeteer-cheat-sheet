@@ -575,7 +575,13 @@ client = await puppeteer.launch({
   //executablePath: '/usr/bin/google-chrome',
   //executablePath: '/home/user/Downloads/Linux_x64_749751_chrome-linux/chrome-linux/chrome',
   //executablePath: '/home/user/Downloads/firefox-78.0a1.en-US.linux-x86_64/firefox/firefox',
+  
+  // You can use the executablePath like above to use specific browser binary or you can use the product value to choose chrome/firefox..
+  product: 'chrome'
+  
   headless: false,
+  
+  
   userDataDir: '../../../../../lib/browserProfiles/' + config_browser_profile,
   args: [
   
