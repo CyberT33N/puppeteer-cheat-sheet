@@ -5,6 +5,36 @@ Puppeteer Cheat Sheet with the most needed stuff..
 - https://github.com/puppeteer/puppeteer/blob/v1.18.1/docs/api.md
 
 
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+## Kill all processes
+
+```bash
+# debian
+pkill chrome
+```
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+
 # URL
 
 ## Wait until new link loaded after click on submit as example
