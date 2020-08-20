@@ -344,8 +344,20 @@ console.log( 'errorMessage:' + errorMessage + '\n\n' );
 
 ## Find element with specific text
 ```javascript
+// METHOD 1
 
+ const stringIsIncluded = await page.evaluate(() => {
+      const string = 'your text here';
+      const selector = 'p > a[href]';
+      return document.querySelector(selector).innerText.includes(string);
+ });
 
+ // will return true or false
+ console.log(stringIsIncluded);
+
+// ____________________________________________________________________________________
+
+// METHOD 2 - WARNING on linux this method does not seems to work because the lib modules does not exist for some reason...
 
          // extract the Page class
          const { Page } = require("puppeteer/lib/Page");
