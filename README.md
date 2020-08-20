@@ -639,6 +639,34 @@ await page.setViewport({width:windowWidth, height:windowHeight});
 <br />
 <br />
 
+
+# Devices
+
+## Simulate Devices (https://github.com/puppeteer/puppeteer/blob/v1.18.1/docs/api.md#puppeteerdevices)
+```javascript
+const puppeteer = require('puppeteer');
+const iPhone = puppeteer.devices['iPhone 6'];
+
+puppeteer.launch().then(async browser => {
+  const page = await browser.newPage();
+  await page.emulate(iPhone);
+  await page.goto('https://www.google.com');
+  // other actions...
+  await browser.close();
+});
+```
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
 # Third Party Links
 
 #### Chromium Browser extension
