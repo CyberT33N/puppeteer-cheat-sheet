@@ -200,7 +200,7 @@ await context.close(); // clear history
 
 # Copy text from clipboard
 ```javascript
-//method #1
+//method #1 (not working in headless - DOMException: Read permission denied)
 const context = await browser.defaultBrowserContext()
 await context.overridePermissions('https://example.com', ['clipboard-read'])
 const copiedText = await page.evaluate(`(async () => await navigator.clipboard.readText())()`)
