@@ -204,6 +204,12 @@ await context.close(); // clear history
 const context = await browser.defaultBrowserContext()
 await context.overridePermissions('https://example.com', ['clipboard-read'])
 const copiedText = await page.evaluate(`(async () => await navigator.clipboard.readText())()`)
+
+//method #2 (doesnt seem to work with clipboard created in browser in headless)
+const clipboardy = require('clipboardy');
+clipboardy.writeSync('🦄');
+clipboardy.readSync();
+//=> '🦄'
 ```  
 
 # Fix for Javascript on website stops when window not in focus
