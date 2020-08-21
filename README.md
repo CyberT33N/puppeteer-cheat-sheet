@@ -205,7 +205,7 @@ const context = await browser.defaultBrowserContext()
 await context.overridePermissions('https://example.com', ['clipboard-read'])
 const copiedText = await page.evaluate(`(async () => await navigator.clipboard.readText())()`)
 
-//method #2 (doesnt seem to work with clipboard created in browser in headless)
+//method #2 (copy the clipboard from your os)
 const clipboardy = require('clipboardy');
 clipboardy.writeSync('🦄');
 clipboardy.readSync();
