@@ -376,14 +376,12 @@ console.log( 'errorMessage:' + errorMessage + '\n\n' );
 ```javascript
 // METHOD 1
 
- const stringIsIncluded = await page.evaluate(() => {
-      const string = 'your text here';
-      const selector = 'p > a[href]';
-      return document.querySelector(selector).innerText.includes(string);
- });
+// will return true or false
+let el = await page.evaluate(() => {
+      if( document.querySelector('div') ) return document.querySelector('div').innerText.includes('Share URL');
+      else return false;
+});
 
- // will return true or false
- console.log(stringIsIncluded);
 
 // ____________________________________________________________________________________
 
