@@ -8,7 +8,23 @@ Puppeteer Cheat Sheet with the most needed stuff..
 
 
 
+## Kill all processes
 
+```bash
+# debian
+pkill chrome
+```
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
 
 <br />
 <br />
@@ -63,23 +79,6 @@ console.log( 'hrefs2: ' + hrefs2 );
 <br />
 <br />
 
-## Kill all processes
-
-```bash
-# debian
-pkill chrome
-```
-
-<br />
-<br />
-
-
- _____________________________________________________
- _____________________________________________________
-
-
-<br />
-<br />
 
 
 # URL
