@@ -8,6 +8,9 @@ Puppeteer Cheat Sheet with the most needed stuff..
 
 
 
+<br />
+<br />
+
 ## Kill all processes
 
 ```bash
