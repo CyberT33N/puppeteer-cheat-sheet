@@ -34,8 +34,21 @@ $( 'li.s-item' ).each(function(){
     console.log( 'url: ' + url );
     ar.push();
 })
-```
 
+
+// method 2 (puppeteer)
+const hrefs1 = await page.evaluate(() => Array.from(
+               document.querySelectorAll('.zp_PrhFA a[href]'),
+               a => a.getAttribute('href')
+));
+console.log( 'hrefs1: ' + hrefs1 );
+   
+// method 3 (puppeteer)
+const elementHandles = await page.$$('.zp_PrhFA a');
+const propertyJsHandles = await Promise.all(  elementHandles.map(handle => handle.getProperty('href'))  );	  
+const hrefs2 = await Promise.all(  propertyJsHandles.map(handle => handle.jsonValue())  );
+console.log( 'hrefs2: ' + hrefs2 );
+```
 
 
 
