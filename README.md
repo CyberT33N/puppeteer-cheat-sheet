@@ -279,9 +279,12 @@ console.log( await page.evaluate(() => date.toString()) );
 let playButton = await page.$('.ytp-large-play-button.ytp-button');
 if (await playButton.isIntersectingViewport()) console.log( 'Large play button was found.. Video did not started itself' );
 
+
+
 // wait until element gets visible.. timeout 0 means wait forever until visible
-await page.waitForSelector('#user-panel', {visible: true, timeout:0});
-console.log( 'User Panel visble..' );                             
+// return JSHandle@node if true or undefenied if false
+let visible = await page.waitForSelector('#user-panel', {visible: true, timeout:0});
+                        
 ```  
 
 
