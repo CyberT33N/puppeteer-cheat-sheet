@@ -641,6 +641,14 @@ client = await puppeteer.launch({
   
   Alternative you can try it aswell for your project only  (https://github.com/CyberT33N/nodejs-cheat-sheet/blob/master/README.md#environment-variable)
   
+  _________________
+
+  If your firefox is not starting use:
+  
+    args: [
+	  '-wait-for-browser'
+	  ]
+  
   */
   product: 'chrome',
   
