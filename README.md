@@ -624,8 +624,14 @@ client = await puppeteer.launch({
   //executablePath: '/home/user/Downloads/Linux_x64_749751_chrome-linux/chrome-linux/chrome',
   //executablePath: '/home/user/Downloads/firefox-78.0a1.en-US.linux-x86_64/firefox/firefox',
   
-  // You can use the executablePath like above to use specific browser binary or you can use the product value to choose chrome/firefox..
-  // You may have to enable PUPPETEER_PRODUCT=firefox npm install  (https://github.com/CyberT33N/nodejs-cheat-sheet/blob/master/README.md#environment-variable)
+  /* You can use the executablePath like above to use specific browser binary or you can use the product value to choose chrome/firefox.
+  For default this should be enough.
+  
+  If not you may have to enable PUPPETEER_PRODUCT=firefox npm install  (https://github.com/CyberT33N/nodejs-cheat-sheet/blob/master/README.md#environment-variable)
+  
+  Or you may have to use this instead:
+  npm config set PUPPETEER_PRODUCT=firefox npm install
+  */
   product: 'chrome'
   
   headless: false,
