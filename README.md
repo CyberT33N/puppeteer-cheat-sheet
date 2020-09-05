@@ -2,7 +2,7 @@
 Puppeteer Cheat Sheet with the most needed stuff..
 
 # DOCS
-- https://github.com/puppeteer/puppeteer/blob/v1.18.1/docs/api.md
+- https://github.com/puppeteer/puppeteer/blob/v5.2.1/docs/api.md
 
 
 <br />
