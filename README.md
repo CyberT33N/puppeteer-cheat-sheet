@@ -624,6 +624,9 @@ client = await puppeteer.launch({
   //executablePath: '/home/user/Downloads/Linux_x64_749751_chrome-linux/chrome-linux/chrome',
   //executablePath: '/home/user/Downloads/firefox-78.0a1.en-US.linux-x86_64/firefox/firefox',
   
+  
+  
+  
   /* You can use the executablePath like above to use specific browser binary or you can use the product value to choose chrome/firefox.
   For default this should be enough.
   
@@ -639,7 +642,11 @@ client = await puppeteer.launch({
   Alternative you can try it aswell for your project only  (https://github.com/CyberT33N/nodejs-cheat-sheet/blob/master/README.md#environment-variable)
   
   */
-  product: 'chrome'
+  product: 'chrome',
+  
+  
+  
+  
   
   headless: false,
   
