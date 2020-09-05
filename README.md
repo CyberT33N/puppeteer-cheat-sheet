@@ -5,6 +5,40 @@ Puppeteer Cheat Sheet with the most needed stuff..
 - https://github.com/puppeteer/puppeteer/blob/v5.2.1/docs/api.md
 
 
+
+
+
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+# Iterating
+
+```javascript
+// method 1 (cheerio)
+let css = await page.evaluate(() => document.querySelector('body').outerHTML);
+let $ = cheerio.load(css);
+
+let ar = [];
+$( 'li.s-item' ).each(function(){  
+    let url = $( this ).find( '.s-item__link' ).attr( 'href' );
+    console.log( 'url: ' + url );
+    ar.push();
+})
+```
+
+
+
+
 <br />
 <br />
 
