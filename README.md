@@ -283,10 +283,19 @@ let playButton = await page.$('.ytp-large-play-button.ytp-button');
 if (await playButton.isIntersectingViewport()) console.log( 'Large play button was found.. Video did not started itself' );
 
 
-
+//method 1
 // wait until element gets visible.. timeout 0 means wait forever until visible
 // return JSHandle@node if true or undefenied if false
 let visible = await page.waitForSelector('#user-panel', {visible: true, timeout:0});
+
+// method 2
+try {
+await page.waitForSelector('.zp_PrhFA a', {visible: true, timeout:30000});
+singleItemURL_JSON.contactemail = true;
+} catch(e) {
+log( 'email error: ' + e.message );
+
+}
                         
 ```  
 
