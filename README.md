@@ -432,13 +432,7 @@ let contactlinkedin = await page.evaluate(() => document.querySelector('.zp_3_fn
 ## Find element with specific text
 ```javascript
 // METHOD 1
-
-// will return true or false
-let el = await page.evaluate(() => {
-      if( document.querySelector('div') ) return document.querySelector('div').innerText.includes('Share URL');
-      else return false;
-});
-
+let el = await page.evaluate(() => document.querySelector('div')?.innerText?.includes('Share URL')  );
 ``` 
 
 
