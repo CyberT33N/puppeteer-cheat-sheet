@@ -404,7 +404,10 @@ await page.type(String.fromCharCode(13));
 <br />
 <br />
 
-# Get Text
+# Get Data
+
+
+## Get text
 ```javascript
 //method #1
 let videoDuration = await page.evaluate(element => element.textContent, await page.$(".ytp-time-duration") );
@@ -418,6 +421,13 @@ let $ = cheerio.load(css);
 let errorMessage = $(css).find('.ytp-error-content-wrap-reason > span').text();
 console.log( 'errorMessage:' + errorMessage + '\n\n' );  
 ```  
+
+## Get attribute
+```javascript
+//method #1
+let contactlinkedin = await page.evaluate(() => document.querySelector('.zp_3_fnL').getAttribute('href') );
+```  
+
 
 ## Find element with specific text
 ```javascript
