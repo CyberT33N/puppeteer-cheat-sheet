@@ -430,7 +430,7 @@ let contactlinkedin = await page.evaluate(() => document.querySelector('.zp_3_fn
 
 ## Find element with specific text
 ```javascript
-// METHOD 1
+// METHOD 1 (WARNING - Does not work when multiple elements with the same css selector exist. It will always match the first result)
 let el = await page.evaluate(() => document.querySelector('div')?.innerText?.includes('Share URL')  );
 
 // METHOD 2
