@@ -410,7 +410,7 @@ await page.type(String.fromCharCode(13));
 let videoDuration = await page.evaluate(element => element.textContent, await page.$(".ytp-time-duration") );
 
 //method #2
-await page.evaluate(() => document.querySelector('#reason').textContent);
+let reason = await page.evaluate(() => document.querySelector('#reason').textContent);
 
 //method #3 (cheerio) - You can use aswell :root instead of body
 let css = await page.evaluate(() => document.querySelector('body').outerHTML);
