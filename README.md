@@ -433,6 +433,9 @@ let contactlinkedin = await page.evaluate(() => document.querySelector('.zp_3_fn
 ```javascript
 // METHOD 1
 let el = await page.evaluate(() => document.querySelector('div')?.innerText?.includes('Share URL')  );
+
+// METHOD 2
+Array.from(document.querySelectorAll('a.zp_3_fnL')).find(el => el.textContent === 'Access Email');
 ``` 
 
 
