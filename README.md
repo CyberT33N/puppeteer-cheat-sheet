@@ -206,10 +206,9 @@ await page.close();
 
 # If State
 ```javascript
-// true
 if ( await page.$('#confirm-button') ) await page.click('#confirm-button');
-//false
-if ( !await page.$('#confirm-button') ) await page.click('#confirm-button');    
+if ( !await page.$('#confirm-button') ) await page.click('#confirm-button');  
+if (   await page.evaluate(() => document.querySelector('.zp_1FMXH span.zp_22lW4')?.innerText?.includes('Account'))   ){        
 ```  
 
 
