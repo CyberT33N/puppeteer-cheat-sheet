@@ -637,7 +637,16 @@ client = await puppeteer.launch({
   
   
   /* You can use the executablePath like above to use specific browser binary or you can use the product value to choose chrome/firefox.
-  For default this should be enough.
+
+
+  On linux terminals you should be able to use:
+  - PUPPETEER_PRODUCT=firefox npm install puppeteer
+
+  After this run:
+  npm install puppeteer
+  
+  
+  
   
   If not you must set PUPPETEER_PRODUCT as environment variable by using:
   npm config set PUPPETEER_PRODUCT firefox npm i puppeteer
