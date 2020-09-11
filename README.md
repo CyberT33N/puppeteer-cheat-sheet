@@ -15,6 +15,12 @@ sudo apt-get install ca-certificates fonts-liberation libappindicator3-1 libasou
 
 
 
+## Performance
+In some cases you maybe have extremly long loading times in headless mode specially on server. To fix this you must change the user-agent:
+```javascript
+await page.setUserAgent('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3851.0 Safari/537.36');
+```
+
 
 
 
