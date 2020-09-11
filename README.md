@@ -7,6 +7,9 @@ Puppeteer Cheat Sheet with the most needed stuff..
 
 
 
+<br />
+<br />
+
 ## Missing dependencies
 In some cases maybe those dependencies are missing on debian and you can not start chrome. To solve install (https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#chrome-headless-doesnt-launch-on-unix):
 ```bash
