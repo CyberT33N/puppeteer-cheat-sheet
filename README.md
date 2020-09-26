@@ -720,6 +720,27 @@ await page.setViewport({width:windowWidth, height:windowHeight});
 <br />
 <br />
 
+# iFrames
+
+## Interact with iFrames
+```javascript
+const elementHandle = await page.$('#iframe');
+const frame = await elementHandle.contentFrame();
+await frame.click('#introAgreeButton');
+```
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
 
 # Devices
 
