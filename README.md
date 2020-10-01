@@ -72,6 +72,7 @@ $( 'li.s-item' ).each(function(){
 })
 
 
+
 // method 2 (puppeteer)
 const hrefs1 = await page.evaluate(() => Array.from(
                document.querySelectorAll('.zp_PrhFA a[href]'),
@@ -79,11 +80,25 @@ const hrefs1 = await page.evaluate(() => Array.from(
 ));
 console.log( 'hrefs1: ' + hrefs1 );
    
+   
+   
 // method 3 (puppeteer)
 const elementHandles = await page.$$('.zp_PrhFA a');
 const propertyJsHandles = await Promise.all(  elementHandles.map(handle => handle.getProperty('href'))  );	  
 const hrefs2 = await Promise.all(  propertyJsHandles.map(handle => handle.jsonValue())  );
 console.log( 'hrefs2: ' + hrefs2 );
+
+
+// method 4 (puppeteer)
+const scrappedSingleItemURLs_AR = await page.evaluate(() => {
+
+       let all = document.querySelectorAll('.s-item__link');
+       let ar = [];
+
+       for( const d of all ){ ar.push(d.getAttribute('href')?.replace( /\?_trkparms=(.*)/gmi, '' )); }
+       return ar;
+
+ });
 ```
 
 
