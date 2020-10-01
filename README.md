@@ -95,8 +95,10 @@ const scrappedSingleItemURLs_AR = await page.evaluate(() => {
        let all = document.querySelectorAll('.s-item__link');
        let ar = [];
 
-       for( const d of all ){ ar.push(d.getAttribute('href')?.replace( /\?_trkparms=(.*)/gmi, '' )); }
-       return ar;
+       if(all){
+          for( const d of all ){ ar.push(d.getAttribute('href')?.replace( /\?_trkparms=(.*)/gmi, '' )); }
+          return ar;
+       }
 
  });
 ```
