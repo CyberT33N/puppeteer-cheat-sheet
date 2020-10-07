@@ -680,6 +680,7 @@ client = await puppeteer.launch({
   
   
   headless: false,
+  ignoreHTTPSErrors: true,
   
   
   userDataDir: '../../../../../lib/browserProfiles/' + config_browser_profile,
