@@ -227,6 +227,12 @@ await client.close();
 await page.close();        
 ```  
 
+# Stop loading of current page
+```javascript
+page._client.send('Page.stopLoading');      
+```  
+              
+
 
 # If State
 ```javascript
