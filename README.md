@@ -686,6 +686,7 @@ client = await puppeteer.launch({
   
   
   headless: false,
+  devtools: true, // <-- open dev tools and also force headfull mode
   ignoreHTTPSErrors: true,
   
   
