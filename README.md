@@ -61,14 +61,11 @@ pkill chrome
 
 ```javascript
 // method 1 (cheerio)
-let css = await page.evaluate(() => document.querySelector('body').outerHTML);
-let $ = cheerio.load(css);
+const $ = cheerio.load( await page.evaluate(() => document.querySelector('body').outerHTML) );
 
 let ar = [];
 $( 'li.s-item' ).each(function(){  
-    let url = $( this ).find( '.s-item__link' ).attr( 'href' );
-    console.log( 'url: ' + url );
-    ar.push();
+    ar.push( $( this ).find( '.s-item__link' ).attr( 'href' ) );
 })
 
 
@@ -78,29 +75,28 @@ const hrefs1 = await page.evaluate(() => Array.from(
                document.querySelectorAll('.zp_PrhFA a[href]'),
                a => a.getAttribute('href')
 ));
-console.log( 'hrefs1: ' + hrefs1 );
-   
+
    
    
 // method 3 (puppeteer)
 const elementHandles = await page.$$('.zp_PrhFA a');
 const propertyJsHandles = await Promise.all(  elementHandles.map(handle => handle.getProperty('href'))  );	  
 const hrefs2 = await Promise.all(  propertyJsHandles.map(handle => handle.jsonValue())  );
-console.log( 'hrefs2: ' + hrefs2 );
 
 
 // method 4 (puppeteer)
 const scrappedSingleItemURLs_AR = await page.evaluate(() => {
 
-       let all = document.querySelectorAll('.s-item__link');
-       let ar = [];
+       const all = document.querySelectorAll('.s-item__link');
+       var ar = [];
 
        if(all){
-          for( const d of all ){ ar.push(d.getAttribute('href')?.replace( /\?_trkparms=(.*)/gmi, '' )); }
-          return ar;
+          for( const d of all ){
+	   ar.push(d.getAttribute('href')?.replace( /\?_trkparms=(.*)/gmi, '' ));
+	   } return ar;
        }
 
- });
+});
 ```
 
 
@@ -328,6 +324,28 @@ log( 'email error: ' + e.message );
 }
                         
 ```  
+
+
+<br />
+<br />
+
+
+ _____________________________________________________
+ _____________________________________________________
+
+
+<br />
+<br />
+
+
+# waitFor
+
+## Wait until element got specific text
+```javascript
+await page.waitFor((name) => {
+ return document.querySelector('.top .name')?.textContent == name;
+}, {timeout: 60000}, test_client2.name);
+```
 
 
 <br />
