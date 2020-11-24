@@ -757,6 +757,7 @@ await page.exposeFunction('config', ()=>{
 });
 
 await page.evaluate(async () => {
+  // window.myConfig = await config(); // <-- alternative you can create global variable too
   const myConfig = await config();
   console.log(`config is ${JSON.stringify(myConfig)}`);
 });
