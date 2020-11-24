@@ -757,7 +757,7 @@ await page.exposeFunction('config', ()=>{
 });
 
 await page.evaluate(async () => {
-  const myConfig = await window.config();
+  const myConfig = await config();
   console.log(`config is ${JSON.stringify(myConfig)}`);
 });
 ```
