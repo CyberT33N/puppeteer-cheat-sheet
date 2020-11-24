@@ -744,16 +744,28 @@ await frame.click('#introAgreeButton');
 ```
 
 
-<br />
-<br />
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
+<br><br>
 
+# .exposeFunction
+- Insert function from Node APP to DOM
+```javascript
+await page.exposeFunction('config', ()=>{
+    return JSON.parse(  fs.readFileSync('./admin/config.json', 'utf8')  );
+});
 
-<br />
-<br />
+await page.evaluate(async () => {
+  const myConfig = await window.config();
+  console.log(`config is ${JSON.stringify(myConfig)}`);
+});
+```
+
+<br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
 
 
 # Devices
