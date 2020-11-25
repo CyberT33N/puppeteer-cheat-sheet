@@ -101,31 +101,37 @@ const scrappedSingleItemURLs_AR = await page.evaluate(() => {
 
 
 
-<br />
-<br />
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br />
-<br />
+<br><br>
 
 
 
 # URL
+
+## Open new Tab
+```javascript
+var newTab = await client.newPage();
+await newTab.goto(link, {waitUntil: 'load', timeout: 35000});
+```  
+
+<br><br>
 
 ## Wait until new link loaded after click on submit as example
 ```javascript
 await page.waitForNavigation();   
 ```  
 
+<br><br>
+
 ## Get current url
 ```javascript
 // https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#pagewaitfornavigationoptions
 console.log( page.url() );      
 ```  
+
+<br><br>
 
 ## Get url of redirect
 ```javascript
