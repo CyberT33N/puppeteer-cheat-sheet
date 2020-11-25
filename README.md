@@ -476,9 +476,8 @@ let emailcheck = await page.evaluate(() => {  if (Array.from(document.querySelec
 
 # Enter Text
 ```javascript
+
 // In most cases method #1 is not working cause the input val cant be found by the website at validation
-
-
 // method #1 (not recommended for most cases)
 await page.$eval('input[name=search]', (el, value) => el.value = value, 'text here..');
 
@@ -490,6 +489,9 @@ await page.$eval('input[name=search]', (el, value) => el.value = value, 'text he
 //await page.click('input[data-ng-model="file.title"]');
 await page.type('input[data-ng-model="file.title"]', 'namehere', { delay: 10 });
 //await page.keyboard.press('Enter');
+
+// method #3
+await page.evaluate(() => { document.querySelector('textarea').value = 'sample_message123'; });
 ```
 
 
