@@ -28,15 +28,10 @@ await page.setUserAgent('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 
 
 
 
-<br />
-<br />
-
-
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-<br />
-<br />
+<br><br>
 
 
 
@@ -47,15 +42,35 @@ await page.setUserAgent('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 
 pkill chrome
 ```
 
-<br />
-<br />
 
 
+<br><br>
  _____________________________________________________
  _____________________________________________________
+<br><br>
 
-<br />
-<br />
+
+# import function as string to DOM and execute
+```javascript
+  /**
+   * Execute script inside of DOM by creating new function and run it
+   * @param {string} script - Script we want to execute
+   * @param {object} page - PPTR page
+  */
+  async evalScript(script, page) {
+    return await page.evaluate(async script=>{
+      return new Function('return ' + script)()();
+    }, script); // return await page.evaluate(async script=>{
+  };
+```
+
+
+<br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+
 
 # Iterating
 
