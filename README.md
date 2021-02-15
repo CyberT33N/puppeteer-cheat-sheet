@@ -7,8 +7,7 @@ Puppeteer Cheat Sheet with the most needed stuff..
 
 
 
-<br />
-<br />
+<br><br>
 
 ## Missing dependencies
 In some cases maybe those dependencies are missing on debian and you can not start chrome. To solve install (https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md#chrome-headless-doesnt-launch-on-unix):
@@ -28,6 +27,37 @@ await page.setUserAgent('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
  _____________________________________________________
  _____________________________________________________
@@ -41,6 +71,33 @@ await page.setUserAgent('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 
 # debian
 pkill chrome
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -63,6 +120,47 @@ pkill chrome
     }, script); // return await page.evaluate(async script=>{
   };
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <br><br>
@@ -116,6 +214,42 @@ const scrappedSingleItemURLs_AR = await page.evaluate(() => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
  _____________________________________________________
  _____________________________________________________
@@ -125,10 +259,18 @@ const scrappedSingleItemURLs_AR = await page.evaluate(() => {
 
 # URL
 
-## Open new Tab
+## Open new page
 ```javascript
 var newTab = await client.newPage();
 await newTab.goto(link, {waitUntil: 'load', timeout: 35000});
+```  
+
+<br><br>
+
+## Get all pages (https://github.com/puppeteer/puppeteer/blob/v5.2.1/docs/api.md#browsercontextpages)
+- returns: <Promise<Array<Page>>> Promise which resolves to an array of all open pages. Non visible pages, such as "background_page", will not be listed here. You can find them using target.page().
+```javascript
+var allPages = await browser.pages);
 ```  
 
 <br><br>
