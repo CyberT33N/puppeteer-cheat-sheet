@@ -335,19 +335,64 @@ log( 'ENTER getRedirectURL() - Imported Array: ' + importedArray );
 
 } //  async function getRedirectURL(importedArray){
 
-
-
-
 ```  
 
 
 
- _____________________________________________________
- _____________________________________________________
 
 
-<br />
-<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
 
 ## Cheerio
 
@@ -359,39 +404,79 @@ let errorMessage = $(css).find('.ytp-error-content-wrap-reason > span').text();
 log( 'errorMessage:' + errorMessage + '\n\n' );
 ```  
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br />
-<br />
+<br><br>
 
 # Pause
 ```javascript
 await page.waitFor(1000);         
 ```  
 
+<br><br>
 
 # Close Session
 ```javascript
 await client.close();        
 ```  
 
+<br><br>
+
 # Close current Page
 ```javascript
 await page.close();        
 ```  
+
+<br><br>
 
 # Stop loading of current page
 ```javascript
 page._client.send('Page.stopLoading');      
 ```  
               
-
+<br><br>
 
 # If State
 ```javascript
@@ -400,6 +485,7 @@ if ( !await page.$('#confirm-button') ) await page.click('#confirm-button');
 if (   await page.evaluate(() => document.querySelector('.zp_1FMXH span.zp_22lW4')?.innerText?.includes('Account'))   ){        
 ```  
 
+<br><br>
 
 # Delete cookies
 ```javascript
@@ -408,6 +494,8 @@ let client = await page.target().createCDPSession();
 await client.send('Network.clearBrowserCookies');
 await client.send('Network.clearBrowserCache');  
 ```  
+
+<br><br>
 
 # Incognito window
 ```javascript
@@ -453,19 +541,62 @@ await page.emulateTimezone( 'Europe/berlin' );
 console.log( await page.evaluate(() => date.toString()) );
 ```  
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br />
-<br />
+<br><br>
 
 
 # Viewport
+
+
+## Check if visible
 ```javascript
 // check currently if element is visble in viewport
 let playButton = await page.$('.ytp-large-play-button.ytp-button');
@@ -479,26 +610,93 @@ let visible = await page.waitForSelector('#user-panel', {visible: true, timeout:
 
 // method 2
 try {
-await page.waitForSelector('.zp_PrhFA a', {visible: true, timeout:30000});
-singleItemURL_JSON.contactemail = true;
+  await page.waitForSelector('.zp_PrhFA a', {visible: true, timeout:30000});
+  singleItemURL_JSON.contactemail = true;
 } catch(e) {
-log( 'email error: ' + e.message );
+  log( 'email error: ' + e.message );
+}	
+```
 
-}
-                        
+
+<br><br>
+
+
+
+## Change Viewport of page
+```javascript
+const viewport = {width: 1920, height: 1080}
+await page.setViewport({...viewport})
 ```  
 
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br />
-<br />
+<br><br>
 
 
 # waitFor
@@ -511,16 +709,47 @@ await page.waitFor((name) => {
 ```
 
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br />
-<br />
+<br><br>
 
 
 # Try
@@ -558,16 +787,56 @@ log( 'openLink() - link: ' + link );
 } // async function openLink(page, link){
 ```  
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br />
-<br />
+<br><br>
 
 # Key presses
 
@@ -583,16 +852,57 @@ page.keyboard.press('Enter');
 await page.type(String.fromCharCode(13));
 ```  
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br />
-<br />
+<br><br>
 
 # Get Data
 
@@ -652,16 +962,58 @@ await page.evaluate(() => { document.querySelector('textarea').value = 'sample_m
 ```
 
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br />
-<br />
+<br><br>
 
 
 # Hover
