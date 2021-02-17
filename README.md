@@ -257,12 +257,53 @@ const scrappedSingleItemURLs_AR = await page.evaluate(() => {
 
 
 
-# URL
+# Page
 
 ## Open new page
 ```javascript
 var newTab = await client.newPage();
 await newTab.goto(link, {waitUntil: 'load', timeout: 35000});
+```  
+
+
+
+<br><br>
+
+# Close current Page
+```javascript
+await page.close();        
+```  
+
+
+<br><br>
+
+# Close all Pages
+```javascript
+/**
+*
+* @returns {array} - All open pages from PPTR.
+*/
+async getPages() {
+  return await this.browser.pages()
+}
+
+/**
+* Close all pages
+*/
+async closePages() {
+  const ar = await this.getPages()
+  for(const page of ar) {
+    await page.close()
+  }
+} 
+```  
+
+
+<br><br>
+
+# Stop loading of current page
+```javascript
+page._client.send('Page.stopLoading');      
 ```  
 
 <br><br>
@@ -462,46 +503,6 @@ await page.waitFor(1000);
 await client.close();        
 ```  
 
-<br><br>
-
-# Close current Page
-```javascript
-await page.close();        
-```  
-
-
-<br><br>
-
-# Close all Pages
-```javascript
-/**
-*
-* @returns {array} - All open pages from PPTR.
-*/
-async getPages() {
-  return await this.browser.pages()
-}
-
-/**
-* Close all pages
-*/
-async closePages() {
-  const ar = await this.getPages()
-  for(const page of ar) {
-    await page.close()
-  }
-} 
-```  
-
-
-
-
-<br><br>
-
-# Stop loading of current page
-```javascript
-page._client.send('Page.stopLoading');      
-```  
               
 <br><br>
 
