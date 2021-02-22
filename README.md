@@ -250,6 +250,93 @@ const scrappedSingleItemURLs_AR = await page.evaluate(() => {
 
 
 
+
+
+
+
+
+
+
+
+<br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+
+
+# Browser
+
+<br><br>
+
+## .disconnect()
+- https://github.com/puppeteer/puppeteer/blob/v5.2.1/docs/api.md#browserdisconnect
+- Disconnects Puppeteer from the browser, but leaves the Chromium process running. After calling disconnect, the Browser object is considered disposed and cannot be used anymore.
+```javascript
+await browser.disconnect()
+```  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <br><br>
  _____________________________________________________
  _____________________________________________________
