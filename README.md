@@ -872,9 +872,10 @@ await page.waitFor((name) => {
 /* this works with any puppeteer command.. You can check if something is visible as example and if not you get error and can work wit ith
 
 #waitUntil
-networkidle0 comes handy for SPAs that load resources with fetch requests.
-networkidle2 comes handy for pages that do long-polling or any other side activity.
-load = will also wait until page is fully loaded but this can be also used for redirects inside.
+- networkidle0 comes handy for SPAs that load resources with fetch requests. consider navigation to be finished when there are no more than 0 network connections for at least 500 ms
+- networkidle2 comes handy for pages that do long-polling or any other side activity. consider navigation to be finished when there are no more than 2 network connections for at least 500 ms.
+- load = will also wait until page is fully loaded but this can be also used for redirects inside.
+
 
 timeout = time until we wait before we stop waiting..
 
