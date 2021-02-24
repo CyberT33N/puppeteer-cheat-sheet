@@ -96,6 +96,88 @@ pkill chrome
 
 
 
+<br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+
+
+# screenshot (https://github.com/puppeteer/puppeteer/blob/v5.2.1/docs/api.md#pagescreenshotoptions)
+
+<br><br>
+
+## Take screenshot as buffer and then save the buffer
+```bash
+const image = await page.screenshot()
+await fs.writeFile('test.jpg', image, 'binary')
+```
+<br><br>
+
+## Take screenshot and directly save the image
+```bash
+const image = await page.screenshot({path: 'test.jpg'})
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
