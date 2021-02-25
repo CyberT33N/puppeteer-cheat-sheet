@@ -545,7 +545,23 @@ log( 'ENTER getRedirectURL() - Imported Array: ' + importedArray );
 
 } //  async function getRedirectURL(importedArray){
 
+
 ```  
+
+
+
+
+
+
+<br><br>
+
+# Disable javascript
+```javascript
+const page = await browser.newPage()
+await page.setJavaScriptEnabled(false)
+```  
+
+
 
 
 
