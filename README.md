@@ -399,6 +399,14 @@ await browser.disconnect()
 
 
 
+<br><br>
+
+## .isConnected()
+- https://github.com/puppeteer/puppeteer/blob/v5.2.1/docs/api.md#browserisconnected
+- Indicates that the browser is connected.
+```javascript
+const res = await browser.isConnected() // true or false
+```  
 
 
 
