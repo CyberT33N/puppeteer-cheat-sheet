@@ -164,6 +164,45 @@ const image = await page.screenshot({path: 'test.jpg'})
 
 
 
+<br><br>
+ _____________________________________________________
+ _____________________________________________________
+<br><br>
+
+
+
+# Event Listener
+
+<br><br>
+
+## disconnected (https://github.com/puppeteer/puppeteer/blob/v5.2.1/docs/api.md#event-disconnected)
+- Emitted when Puppeteer gets disconnected from the Chromium instance. This might happen because of one of the following:
+  - Chromium is closed or crashed
+  - The browser.disconnect method was called
+```bash
+browser.on('disconnected', doSomething())
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
