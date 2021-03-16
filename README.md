@@ -67,9 +67,11 @@ await page.setUserAgent('Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 
 
 ## Kill all processes
 
+
+#### Linux
 ```bash
 # debian
-pkill chrome
+killall -9 chrome
 ```
 
 
