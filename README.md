@@ -1399,16 +1399,29 @@ await page2.bringToFront();
 ```  
 
 
-<br />
-<br />
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
  _____________________________________________________
  _____________________________________________________
-
-
-<br />
-<br />
+<br>
+<br>
 
 
 # Launch
@@ -1509,8 +1522,48 @@ await page.setViewport({width:windowWidth, height:windowHeight});
 ```
 
 
-<br />
-<br />
+
+
+
+<br><br>
+## Install Firefox and Chrome together
+- To install both Chromium and Firefox at the same time:
+```
+# Install Chrome
+npm install puppeteer
+
+# Install Firefox
+cd node_modules/puppeteer
+PUPPETEER_PRODUCT=firefox node install.js
+cd ../..
+
+# You should now see that they're both installed:
+ls -1d node_modules/puppeteer/.local*
+# node_modules/puppeteer/.local-chromium
+# node_modules/puppeteer/.local-firefox
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br>
 
 
  _____________________________________________________
