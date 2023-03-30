@@ -765,6 +765,24 @@ await client.send('Network.clearBrowserCache');
 
 <br><br>
 
+# Delete cookies in headless
+- If it not works out of the box try this
+```javascript
+// You can try and use incognito mode and close the page then re-open a new page with a fresh cookie
+
+(async () => {
+  var puppeteer = require('puppeteer');
+  var browser = puppeteer.launch();
+  var context = await browser.createIncognitoBrowserContext();
+  var page = await context.newPage();
+})();
+```  
+
+
+
+
+<br><br>
+
 # Incognito window
 ```javascript
 // When you close context at the end and you want to create a new session after you must create again a new context
