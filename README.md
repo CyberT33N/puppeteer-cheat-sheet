@@ -1671,6 +1671,8 @@ puppeteer.launch().then(async browser => {
 
 # Utils
 
+<details><summary>Click to expand..</summary>
+
 ## Next.js Gif Creator
 
 TS:
@@ -1867,12 +1869,12 @@ const captureGif = async(): Promise<void> => {
             const progressBar = '█'.repeat(filled) + '▒'.repeat(empty)
             process.stdout.write(`\r📸 Creating Screenshots: ${progressBar} ${percent}% (${i}/${TOTAL_FRAMES}) `)
             
-1.             // Switch theme at halfway point
-2.             if (i === Math.floor(TOTAL_FRAMES / 2)) {
-3.                 console.log('\n🎨 Switching theme...')
-4.                 await page.click('label[aria-label="Switch to light mode"]')
-5.                 await new Promise<void>(resolve => setTimeout(resolve, 500)) 
-6.             }
+             // Switch theme at halfway point
+             if (i === Math.floor(TOTAL_FRAMES / 2)) {
+                 console.log('\n🎨 Switching theme...')
+                 await page.click('label[aria-label="Switch to light mode"]')
+                 await new Promise<void>(resolve => setTimeout(resolve, 500)) 
+             }
             
             await page.screenshot({ path: join(tmpDir, `screenshot-${i}.png`) })
             await new Promise<void>(resolve => setTimeout(resolve, FRAME_DELAY)) // Real-time capture
@@ -2098,6 +2100,28 @@ await captureGif()
 nextProcess.kill() // Next.js-Server stoppen
 
 ```
+
+
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
